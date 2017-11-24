@@ -22,7 +22,7 @@ public abstract class Constants {
 	public static final String CHOOSE_CHARACTER = "Choose a character from the below list!";
 	public static final String CHOOSE_MAP = "Choose a map from the below list!";
 	public static final String ENCOUNTERED_ENEMY = "Encountered with \"{0}\", to win the fight answer the following question!";
-	public static final String ANSWER_THE_QUESTION = "Answer the question by \"yes\" or \"no\" to continue or pass by typing \"pass\"";
+	public static final String ANSWER_THE_QUESTION = "Answer the question by \"yes\" or \"no\" to continue ";
 	public static final String WIN_THE_FIGHT = "You win the fight, congratulations, your new experience point is {0}";
 	public static final String LOST_THE_FIGHT = "You lost the fight, correct answer is \"{0}\"";
 	public static final String NEW_EXPERIENCE = " your new experience {0}";
