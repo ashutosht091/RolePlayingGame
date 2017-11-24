@@ -27,13 +27,13 @@ public class GameDaoImplTest {
 	public void testGameSaveAndGetGameList()
 	{
 		GameDao gameDaoImpl  = DaoFactory.getDaoStore().getGameDao();
-		GameStaticData.currentPlayer = new Player("test", "test", "testUser" ,"pass");
+		GameStaticData.currentPlayer = new Player("Tom", "Jay", "testUser", "abc");
 		try {
 		GameCharacter gameCharacter  = GameStaticData.getGamecharacters().get(0);
 		gameCharacter.setExperience(new Experience(1));
 		gameCharacter.setPosition(new Position(0,0,true));
 		GameMap map = GameStaticData.getMaps().get(0);
-		Game game = new Game(NumberUtil.generateSecureRandom(),TestConstants.player,gameCharacter,map);
+		Game game = new Game(NumberUtil.generateSecureRandom(),GameStaticData.currentPlayer,gameCharacter,map);
 		
 			gameDaoImpl.saveGameState(TestConstants.FILE_NAME_SAVE_GAME, game);
 			List<Game> gameList =  gameDaoImpl.getGameList(TestConstants.FILE_NAME_SAVE_GAME, "testUser",TestConstants.TEST_FILE_NAME);

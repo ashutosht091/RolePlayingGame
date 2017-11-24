@@ -36,7 +36,7 @@ class PlayerDaoImpl implements PlayerDao {
 				}
 			}
 		}
-		FileUtility.writeEntityIntoFile(Constants.GAME_PLAYERS_DATA, player);
+		FileUtility.writeEntityIntoFile(fileName, player);
 		return player;
 
 	}

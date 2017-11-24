@@ -32,22 +32,5 @@ public class ReflectionUtil {
 		}
 		
 		
-		public static Object getObjectFromType(Object data, Class<?> type) {
-			if (type.equals(Integer.class) || type.equals(int.class))
-				return Integer.parseInt(data.toString());
-			else if (type.equals(Short.class) || type.equals(short.class))
-				return Short.parseShort(data.toString());
-			else if (type.equals(Long.class) || type.equals(long.class))
-				return Long.parseLong(data.toString());
-			else if (type.equals(Byte.class) || type.equals(byte.class))
-				return Byte.parseByte(data.toString());
-			else if (type.equals(Character.class) || type.equals(char.class))
-				return data.toString().charAt(0);
-			else if (type.equals(Double.class) || type.equals(double.class))
-				return Double.parseDouble(data.toString());
-			else if (type.equals(Float.class) || type.equals(float.class))
-				return Float.parseFloat(data.toString());
-			else
-				return data.toString();
-		}
+		
 }

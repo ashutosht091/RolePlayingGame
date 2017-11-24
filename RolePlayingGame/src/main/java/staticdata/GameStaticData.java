@@ -24,7 +24,15 @@ import model.Position;
 import model.Question;
 import util.ResourceUtil;
 
-
+/**
+ * This class serves as container which holds static data of the game
+ * It loads data from property files and initialize game attributes
+ * all attributes except currentPlayer are final . When the final attributes 
+ * are accessed , deep cloned copies are returned .
+ * 
+ * @author ashutosh
+ *
+ */
 public class GameStaticData {
 
 	public static final Logger logger = LoggerFactory.getLogger(GameStaticData.class);
@@ -165,6 +173,13 @@ public class GameStaticData {
 	public static Map<Integer, List<Question>> getGamemaptoquestions() throws RolePlayGameException{
 		return deepClone(gameMapToquestions);
 	}
+	/**
+	 * This method is used for deep cloning a object. It uses serialization for making
+	 * copy of object
+	 * @param t
+	 * @return
+	 * @throws RolePlayGameException
+	 */
 
 	public static <T>T deepClone(T t) throws RolePlayGameException {
 

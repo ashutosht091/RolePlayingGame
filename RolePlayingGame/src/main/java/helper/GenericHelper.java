@@ -34,9 +34,6 @@ public  class GenericHelper {
 
 	}
 
-	public static boolean goPrevMenu(String userInput) {
-		return Constants.EXIT.equals(userInput);
-	}
 
 	public static void checkForExit(String userInput) {
 		if (Constants.EXIT.equals(userInput))
@@ -60,7 +57,11 @@ public  class GenericHelper {
 		return password;
 	}
 
-	
+	/**
+	 * To check if an custom exception can be resolved with different input
+	 * @param exception
+	 * @return
+	 */
 	public static boolean needDifferentInputs(RolePlayGameException exception)
 	{
 		boolean isHandled = true;

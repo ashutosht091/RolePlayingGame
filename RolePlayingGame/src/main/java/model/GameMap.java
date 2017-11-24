@@ -2,7 +2,12 @@ package model;
 
 import java.io.Serializable;
 import java.util.Map;
-
+/**
+ * This class is model for a game Map . its attributes are dimensions , name and questions 
+ * of map.
+ * @author ashutosh
+ *
+ */
 public class GameMap implements Serializable {
 	/**
 	 * 

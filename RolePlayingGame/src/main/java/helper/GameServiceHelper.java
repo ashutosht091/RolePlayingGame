@@ -45,10 +45,8 @@ public class GameServiceHelper implements IGameServiceHelper {
 				printLn(character.getCharacterId() + Constants.ARROW + character.getName());
 			}
 			choosenCharacter = scanner.next();
-			if (GenericHelper.goPrevMenu(choosenCharacter))
-				return null;
 			int indx = Integer.parseInt(choosenCharacter);
-			if (indx != -1 && indx <= gameCharacter.size())
+			if (indx >=1 && indx <= gameCharacter.size())
 				currentCharacter = gameCharacter.get(indx - 1);
 			if (currentCharacter == null) {
 				printLn(Constants.WRONG_INFO_TRY_AGAIN);
@@ -63,10 +61,8 @@ public class GameServiceHelper implements IGameServiceHelper {
 				printLn(map.getMapId() + Constants.ARROW + map.getMapName());
 			}
 			choosenMap = scanner.next();
-			if (GenericHelper.goPrevMenu(choosenMap))
-				return null;
 			int indx = Integer.parseInt(choosenMap);
-			if (indx != -1 && indx <=maps.size())
+			if (indx >=11 && indx <=maps.size())
 				currentMap = maps.get(indx - 1);
 			if (currentCharacter == null) {
 				printLn(Constants.WRONG_INFO_TRY_AGAIN);
@@ -178,7 +174,7 @@ public class GameServiceHelper implements IGameServiceHelper {
 				}else
 				{
 					int indx = Integer.parseInt(userOption);
-					if (indx != -1 && indx <= games.size())
+					if (indx >=1 && indx <= games.size())
 						gameToplay = games.get(indx - 1);
 					if (gameToplay == null) {
 						printLn(Constants.WRONG_INFO_TRY_AGAIN);

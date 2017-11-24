@@ -22,7 +22,7 @@
 				<version>2.6</version>
 				<configuration>
 					<descriptorRefs>
-						<descriptorRef>jar-runnable</descriptorRef>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
 					<archive>
 						<manifest>

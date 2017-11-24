@@ -44,7 +44,7 @@ import staticdata.GameStaticData;
  */
 public class GameEngine {
 
-	
+
 	public static final Logger logger = LoggerFactory.getLogger(GameEngine.class);
 	private GameEngine()
 	{
@@ -55,12 +55,39 @@ public class GameEngine {
 
 
 		Scanner scanner = new Scanner(System.in);
-		Player player = null;
-		String userOption="";
 		print(Constants.WELCOME_MSG);
 		printLn(Constants.GAME_TOPIC);
 
+		try{
+			Player player = playerServices(scanner);
+			if(player!=null)
+			{
+				GameStaticData.currentPlayer=player;
+				GameService.getInstance().startGame(scanner);
+			}
+		}catch(Exception exception)
+		{
+			logger.error(exception.getMessage(),exception);
+			printLn(GameExceptionType.ERROR.getMsg());
+		}finally
+		{
+			scanner.close();
+		}
 
+		
+
+
+	}
+	/**
+	 * This function is used for player signIn and signUp Services
+	 * @param scanner
+	 * @return
+	 * @throws RolePlayGameException
+	 */
+	public static Player playerServices(Scanner scanner) throws RolePlayGameException 
+	{
+		Player player = null;
+		String userOption="" ;
 		do{
 			try{
 				printLn(Constants.LOGIN_DETAILS);
@@ -81,25 +108,8 @@ public class GameEngine {
 				}
 			}
 		}while(player==null && !userOption.equals(Constants.EXIT));
-		try{
-			if(player!=null)
-			{
-				GameStaticData.currentPlayer=player;
-				GameService.getInstance().startGame(scanner);
-			}
-		}catch(Exception exception)
-		{
-			logger.error(exception.getMessage(),exception);
-			printLn(GameExceptionType.ERROR.getMsg());
-		}finally
-		{
-			scanner.close();
-		}
-
-
-
-
-
+		return player;
 	}
+
 
 }

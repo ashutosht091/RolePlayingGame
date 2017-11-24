@@ -1,6 +1,9 @@
 package model;
 
 import java.io.Serializable;
+/**
+ * Game class declares game attributes which is required to load/run a game .
+ */
 import java.util.Arrays;
 
 public class Game implements Serializable{
