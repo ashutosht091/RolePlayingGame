@@ -62,7 +62,7 @@ public class GameServiceHelper implements IGameServiceHelper {
 			}
 			choosenMap = scanner.next();
 			int indx = Integer.parseInt(choosenMap);
-			if (indx >=11 && indx <=maps.size())
+			if (indx >=1 && indx <=maps.size())
 				currentMap = maps.get(indx - 1);
 			if (currentCharacter == null) {
 				printLn(Constants.WRONG_INFO_TRY_AGAIN);
